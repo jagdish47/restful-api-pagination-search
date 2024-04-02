@@ -2,11 +2,14 @@ import User from "../model/user-model.js";
 
 export const pagination = async (req, res) => {
   try {
+    //getting page and limit
     let { page, limit } = req.query;
 
+    // convert them into number if not than get 1 and 10
     page = parseInt(page) || 1;
     limit = parseInt(limit) || 10;
 
+    // if user enter invalid limit or page
     if (page <= 0 || limit <= 0) {
       return res
         .status(400)
@@ -15,6 +18,7 @@ export const pagination = async (req, res) => {
 
     const skip = (page - 1) * limit;
 
+    // find user and skip the user and setup the limit
     const users = await User.find().skip(skip).limit(limit);
 
     res
