@@ -9,7 +9,7 @@ This repository is a backend project focused on implementing pagination and sear
 1. Clone the repository to your local machine using the following command:
 
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/jagdish47/restful-api-pagination-search.git
    ```
 
 2. Navigate to the project directory:
